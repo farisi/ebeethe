@@ -250,7 +250,7 @@ class ProblemTaxes extends Controller
 
         } catch (\Exception $e) {
             DB::rollback();
-            dd($e);
+            //dd($e);
             return redirect()->route('problems.index')->with('fails',$e->getMessage());
         }
         
