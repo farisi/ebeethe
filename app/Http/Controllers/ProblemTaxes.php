@@ -230,11 +230,11 @@ class ProblemTaxes extends Controller
 
         try {
             
-            History::select()->where("letter_id", $id)->update(['is_last'=>0]);
+            
             $letter = Letter::findOrfail($id);
             $letter->is_paid_off = 'Y';
             $letter->save();
-            
+
             $history = new History;
             $history->letter_date = Carbon::parse($input['letter_date'])->format('Y-m-d');
             $history->periode = Carbon::now()->format('Y-m-d');
@@ -244,13 +244,15 @@ class ProblemTaxes extends Controller
             $history->is_last = 1;
             $history->letter_id = $id;
             $history->duration = 0;
+
+            History::select()->where("letter_id", $id)->update(['is_last'=>0]);
             $history->save();
 
             DB::commit();
 
         } catch (\Exception $e) {
             DB::rollback();
-            //dd($e);
+            dd($e);
             return redirect()->route('problems.index')->with('fails',$e->getMessage());
         }
         
