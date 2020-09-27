@@ -1,0 +1,19 @@
+{
+    "name": "farisi/ui",
+    "description": "template untuk menjalankan javascript yang biasa digunakan",
+    "type": "library",
+    "license": "GNU",
+    "authors": [
+        {
+            "name": "farisi",
+            "email": "salmandriva@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "Bungker\\Ui\\": "src"
+        }
+    },
+    "require": {}
+}

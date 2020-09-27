@@ -26,6 +26,8 @@ Route::resource('taxes','TaxesController')->except([
     'edit'
 ]);
 
+Route::resource('users','UserController');
+
 
 Route::group(['prefix'=>'status','as'=>'status.'],function(){
     Route::get('/','StatusController@index')->name('index');
@@ -65,3 +67,5 @@ Route::group(['prefix'=>'reports','as'=>'reports.'],function(){
     Route::get('/','ReportsController@index')->name('index');
     Route::get('/pdf','ReportsController@showpdf')->name('showpdf');
 });
+
+Route::resource('commons','CommonController');

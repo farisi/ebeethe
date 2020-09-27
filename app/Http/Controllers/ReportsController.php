@@ -98,7 +98,7 @@ class ReportsController extends Controller
         $letters = $letters->get();
         
         $pdf = PDF::loadView('reports.pdf', compact('letters'));
-        return $pdf->stream('reports.pdf');
-        //return view('reports.pdf', compact('letters'));
+        //return $pdf->stream('reports.pdf');
+        return view('reports.pdf', compact('letters'));
     }
 }

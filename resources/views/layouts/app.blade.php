@@ -97,12 +97,21 @@
               </a>
           </li>
 
+          
+        <li class="nav-item  {{explode('.',$routeName)[0] === 'users' ? 'active' :''}} ">
+          <a class="nav-link" href="{{route('users.index')}}">
+            <i class="material-icons">account_box</i>
+            <p>Pengguna</p>
+          </a>
+      </li>
+
           <li class="nav-item  {{explode('.',$routeName)[0] === 'reports' ? 'active' :''}} ">
             <a class="nav-link" href="{{route('reports.index')}}">
               <i class="material-icons">report</i>
-              <p>Report</p>
+              <p>Laporan</p>
             </a>
         </li>
+
 
 
           <!-- your sidebar here -->

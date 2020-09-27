@@ -14,7 +14,10 @@
         <table class="table table-bordered">
             <thead>
                 <tr>
-                    <th>No</th><th>Object Pajak</th><th>NPWP</th><th>Pajak Bulan</th><th>Pokok</th><th>Denda</th><th>Tanggal Tagihan</th><th>Berakhir Sampai</th><th>Status</th>
+                    <th rowspan="2">No</th><th rowspan="2">Object Pajak</th><th rowspan="2">NPWP</th><th rowspan="2">Pajak Bulan</th><th rowspan="2">Pokok</th><th rowspan="2">Denda</th><th rowspan="2">Tanggal Tagihan</th><th colspan="4" style="text-align: center">Status</th>
+                    <tr>
+                        <th>STPD</th><th>Teguran I</th><th>Teguran II</th><th>Lunas</th>
+                    </tr>
                 </tr>
             </thead>
             <tbody>
@@ -22,7 +25,8 @@
                     <tr>
                         <td>{{$loop->iteration}}</td><td>{{$letter->company->name}}</td><td>{{$letter->company->npwp}}</td><td>{{config('month')[$letter->month]}} - {{$letter->year}}</td>
                         <td>{{$letter->pokok}}</td><td>{{$letter->history_last->first()->penalty}}</td>
-                        <td>{{$letter->history_last->first()->letter_date}}</td><td>{{$letter->history_last->first()->periode}}</td><td>{{$letter->history_last->first()->status->desc}}</td>
+                        <td>{{Carbon\Carbon::parse($letter->history_last->first()->letter_date)->format('d-M-Y')}}</td>
+                        <td></td><td></td><td></td><td></td>
                     </tr>
                 @endforeach
             </tbody>

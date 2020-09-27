@@ -18,4 +18,16 @@ class Letter extends Model
     public function history_last(){
         return $this->histories()->where('is_last',1);
     }
+
+    public function history_stpd(){
+        return $this->histories()->where('status_id',2);
+    }
+
+    public function history_teguran1(){
+        return $this->histories()->where('status_id',3);
+    }
+
+    public function history_teguran2(){
+        return $this->histories()->where('status_id',4);
+    }
 }

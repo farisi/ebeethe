@@ -7,6 +7,7 @@ use App\Charts\Category;
 use App\CompanyCategories;
 use App\Letter;
 use Carbon\Carbon;
+use Bungker\Ui\Main;
 
 class HomeController extends Controller
 {
